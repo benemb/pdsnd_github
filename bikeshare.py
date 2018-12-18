@@ -6,6 +6,7 @@
 import time
 import pandas as pd
 import numpy as np
+import difflib
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -32,8 +33,19 @@ def get_filters():
     while True:
         try:
             city = input('Would you like to see data for Chicago, New York City, or Washington? ').lower()
-            city_idx = cities.index(city)
-            break
+            # if possible suggest the closest matching city
+            close_matches = difflib.get_close_matches(city, ['chicago','new york city','washington'] )[0]
+            if city in cities:
+                city_idx = cities.index(city)
+                break
+            else:
+                question = input('Do you mean {}? y/n '.format(close_matches.title())).lower()
+                if question == 'y':
+                    city = str(close_matches)
+                    break
+                else:
+                    print('Oops! Enter the correct city')
+                    continue
         except: ValueError
         print('Oops! Enter the correct city')
 
