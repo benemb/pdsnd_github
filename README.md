@@ -20,5 +20,5 @@ Pandas 0.23.4 or later
 Numpy 1.15.1 or later  
 
 ### Credits
--ASCII pic 'bike.txt' downloaded from:
- https://asciiart.website/index.php?art=transportation/bicycles
+ASCII pic 'bike.txt' downloaded from:
+https://asciiart.website/index.php?art=transportation/bicycles
