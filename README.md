@@ -21,4 +21,5 @@ Numpy 1.15.1 or later
 
 ### Credits
 ASCII pic 'bike.txt' downloaded from:
-https://asciiart.website/index.php?art=transportation/bicycles
+https://asciiart.website/index.php?art=transportation/bicycles  
+Closest matching city feature: thanks to Google for the idea, and thanks to this stack overflow discussion https://stackoverflow.com/questions/10018679/python-find-closest-string-from-a-list-to-another-string for letting me discover difflib.get_close_matches
