@@ -246,7 +246,10 @@ def user_stats(df):
             most_recent_yob = df['Birth Year'].describe()['max'].astype(int)
             most_common_yob = df['Birth Year'].mode()[0].astype(int)
             nan_count_yob = df['Birth Year'].isnull().sum()
-            print('User Genders: \n{} \nNote that you have {} missing data in the \'Gender\' column. \n\nThe earliest year of birth is: {} \nThe most recent year of birth is: {} \nThe most common year of birth is: {} \nNote that you have {} missing data in the \'Birth Year\' column.'.format(user_gender_count, nan_count_gender, earliest_yob, most_recent_yob, most_common_yob, nan_count_yob))
+            print('User Genders: \n{}'.format(user_gender_count))
+            print('Note that you have {} missing data in the \'Gender\' column.'.format(nan_count_gender))
+            print('The earliest year of birth is: {}. \nThe most recent year of birth is: {} \nThe most common year of birth is: {}.'.format(earliest_yob, most_recent_yob, most_common_yob))
+            print('Note that you have {} missing data in the \'Birth Year\' column.'.format(nan_count_yob))
             break
         except: KeyError
         print('\nSorry, for this city \'Gender\' and \'Birth Year\' statistics are unavailable')
