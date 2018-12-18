@@ -52,7 +52,7 @@ def get_filters():
     if option == 'month':
         while True:
             try:
-                # adding 'all' in case user changes his/her mind without the need of restarting the code.
+                # add 'all' in case user changes his/her mind without the need of restarting the code.
                 month = input('Which month - January, February, March, April, May, June or \'all\'? ').lower()
                 month_idx = months.index(month)
                 day = 'all'
@@ -65,7 +65,7 @@ def get_filters():
     elif option == 'day':
         while True:
             try:
-                # adding 'all' in case user changes his/her mind without the need of restarting the code.
+                # add 'all' in case user changes his/her mind without the need of restarting the code.
                 day = input('Which day - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or \'all\'? ').lower()
                 days_idx = week_days.index(day)
                 month = 'all'
@@ -77,7 +77,7 @@ def get_filters():
     elif option == 'both':
         while True:
             try:
-                # adding 'all' in case user changes his/her mind without the need of restarting the code.
+                # add 'all' in case user changes his/her mind without the need of restarting the code.
                 month = input('Which month - January, February, March, April, May, June or \'all\'? ').lower()
                 month_idx = months.index(month)
                 break
@@ -88,7 +88,7 @@ def get_filters():
 
         while True:
             try:
-                # adding 'all' in case user changes his/her mind without the need of restarting the code.
+                # add 'all' in case user changes his/her mind without the need of restarting the code.
                 day = input('Which day - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or \'all\'? ').lower()
                 days_idx = week_days.index(day)
                 break
@@ -152,16 +152,14 @@ def time_stats(df):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     #  display the most common month
-
     df['month'] = df['Start Time'].dt.month_name()
     most_common_month = df['month'].mode()[0]
 
     #  display the most common day of week
-
     df['day'] = df['Start Time'].dt.weekday_name
     most_common_dow = df['day'].mode()[0]
-    #  display the most common start hour
 
+    #  display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     most_common_start_hour = df['hour'].mode()[0]
 
@@ -208,7 +206,7 @@ def trip_duration_stats(df):
     # display mean travel time
     mean_travel_time = df['Trip Duration'].describe()['mean']
 
-    # adaptating the time visualization basing on its duration
+    # adapt the time visualization basing on its duration
     if total_travel_time > 86400:
         print('The total travel time is {} seconds or ~{} minutes or ~{} hours or ~{} days'.format(total_travel_time, int((total_travel_time // 60)), int((total_travel_time // 3600)), int((total_travel_time // 86400))))
     else:
